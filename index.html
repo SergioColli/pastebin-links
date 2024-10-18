@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Pastebin</title>
+</head>
+<body>
+    <h1>Resultados de Escaneo de Puertos</h1>
+    <div id="result-container"></div>
+    <script>
+        // Función para obtener el enlace desde la URL
+        function getLink() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const pasteLink = urlParams.get('link');
+            if (pasteLink) {
+                document.getElementById('result-container').innerHTML = `<a href="${pasteLink}" target="_blank">${pasteLink}</a>`;
+            } else {
+                document.getElementById('result-container').innerText = "No hay enlace disponible.";
+            }
+        }
+        getLink();
+    </script>
+</body>
+</html>
